@@ -1,1 +1,13 @@
-<h1>Done!!!</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Message Board</h1>
+
+
+<ul>
+    {% for posts in message_posts %}
+        <li>{{ posts }}</li>
+
+    {% endfor %} 
+</ul>
+{% endblock content %}
