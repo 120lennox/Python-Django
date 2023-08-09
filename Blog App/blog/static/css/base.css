@@ -1,0 +1,29 @@
+body {
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+header h1 a{
+    color:darkgoldenrod;
+    text-decoration: none;
+    
+}
+header h1{
+    text-align: center;
+}
+
+.post-entry h2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-entry a{
+    text-decoration: none;
+    color:darkcyan;
+}
+
+.post-entry a:hover{
+    background-color: darkslategray;
+    color: aliceblue;
+}
