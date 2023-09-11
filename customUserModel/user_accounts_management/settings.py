@@ -133,5 +133,14 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 #DJANGO SEND EMAIL CONFIGURATIONS
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_URL = 'login_now'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False  # Add this line for debugging
+
+
+
