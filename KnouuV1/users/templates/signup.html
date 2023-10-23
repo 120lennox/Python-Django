@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% block title %}Signup{% endblock title %}
+{% block content %}
+<section class="mx-auto flex items-center justify-center mt-10">
+    <h2>Login</h2>
+    <form method="Post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Signup">
+    </form>
+</section>
+{% endblock content %}
