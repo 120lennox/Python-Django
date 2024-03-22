@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+    <h1>Results!</h1>
+    <table>
+        <tr>
+            <th>Names</th>
+            <th>Grades</th>
+        </tr>
+    {% for student in students %}
+            <tr>
+                <td>
+                    {{ student.name }}
+                </td>
+                <td>
+                    {{ student.grade }}
+                </td>
+                
+            </tr>
+        {% empty %}
+            <p>No results yet!</p>
+    {% endfor %}
+    </table>
+
+    <a href="{% url 'add' %}"> add results </a>
+
+{% endblock content %}
