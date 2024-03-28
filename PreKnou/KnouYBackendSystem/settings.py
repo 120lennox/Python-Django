@@ -61,6 +61,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'KnouYBackendSystem.urls'
 import os
+
+#MEDIA 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 TEMPLATES = [
     {
         'DIRS':[os.path.join(BASE_DIR, 'templates')],
@@ -127,6 +131,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -142,5 +149,8 @@ NPM_BIN_PATH = r'C:\Program Files\nodejs\npm.cmd'
 
 #AUTHENTICATION SYSTEM ENGINE CONFIGURATIONS
 AUTH_USER_MODEL = 'users.UserCustomization'
+
+LOGIN_REDIRECT_URL = 'registered_user_home.html'
+LOGOUT_REDIRECT_URLS = 'home.html'
 
 

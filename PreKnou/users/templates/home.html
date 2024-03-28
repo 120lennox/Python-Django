@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% load static tailwind_tags %}
+{% block title %}Homepage{% endblock title %}
+{% block content %}
+<main class="mx-auto max-w-4xl text-slate-950">
+    <section class="flex flex-col sm:flex-row items-center justify-center p-6 gap-8 mt-8">
+        <article class="w-1/2">
+            <h2 class="text-bold text-xl sm:text-3xl">Unlocking Limitless Possibilities: ThinkTank - Where Ideas Flourish, Minds Connect, and Innovation Thrives</h2>
+            <p class="mt-2">Unleashing Brilliance</p>
+            <button class="rounded-full bg-slate-950 text-white px-4 py-2 mt-4" href="{% url 'signup' %}">Get started</button>
+        </article>
+            <img class="w-1/2" src="{% static 'images/Home_Hero.png' %}" alt="">  
+    </section>
+</main>
+{% endblock content %}

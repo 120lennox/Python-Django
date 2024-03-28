@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    {% block content %}{% endblock content %}
+        <a href="{% url 'home' %}">Home</a> <br />
+        <a href="{% url 'add' %}">Add student</a> <br />
+        <a href="{% url 'search' %}">Search</a>
+    {% block content %}
+    {% endblock content %}
 </body>
 </html>

@@ -21,17 +21,17 @@ class CustomUserManager(BaseUserManager):
         
         return user
     
-    def create_superuser(self, email, passowrd=None, **extra_fields):
-        extra_fields.setdefault('is_stuff', True)
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         
-        if extra_fields.get('is_stuff') is False:
-            raise ValueError(_('Superuser is_stuff=True'))
+        if extra_fields.get('is_staff') is False:
+            raise ValueError(_('Superuser is_staff=True'))
         
         if extra_fields.get('is_superuser') is False:
             raise ValueError(_('Superuser is_superuser=True'))
         
-        return self.create_user(email, passowrd, **extra_fields)
+        return self.create_user(email, password, **extra_fields)
 
 class UserCustomization(AbstractBaseUser, PermissionsMixin):
     
@@ -41,13 +41,13 @@ class UserCustomization(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True, max_length=60)
     date_of_birth = models.DateField(_('Date of birth'))
     is_active = models.BooleanField(_('is active'), default=True)
-    is_stuff = models.BooleanField(_('is stuff'), default=False)
+    is_staff = models.BooleanField(_('is staff'), default=False)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
     objects = CustomUserManager()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth']
     
     def __str__(self):
-        self.first_name
+        self.email
     
         

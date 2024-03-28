@@ -2,12 +2,13 @@
 
 {% block content %}
 <h2>Tasks</h2>
-{% for task in tasks %}
-    <ul>
-        <li>
-            <a href="">{{ task }}</a>
-        </li>
-    </ul>
-    <a href="{ url 'add' }">add new task</a>
-{% endfor %}
+    {% for task in tasks %}
+        <ul>
+            <li>
+                {{ task }}
+            </li>
+        </ul>
+    {% endfor %}
+<a href="{% url 'tasks:add' %}">add new task</a>
+
 {% endblock content %}

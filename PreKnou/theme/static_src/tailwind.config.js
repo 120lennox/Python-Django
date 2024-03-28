@@ -42,7 +42,15 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                poppins: ['Poppins', 'sans-serif'],
+                dancing_script: ['Dancing Script', 'cursive']
+            },
+            backgroundImage: {
+                'grid-large': 'url(./images/grid_large.svg)'
+            }, 
+
     },
     plugins: [
         /**
@@ -55,4 +63,5 @@ module.exports = {
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
     ],
+}
 }
