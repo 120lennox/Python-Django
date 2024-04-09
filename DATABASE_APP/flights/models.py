@@ -9,7 +9,7 @@ class Airport(models.Model):
 
 #This class holds foreign keys of different Airports
 class Flights(models.Model):
-    origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
+    origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures") #foreign key 
     destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
     duration = models.IntegerField()
 
