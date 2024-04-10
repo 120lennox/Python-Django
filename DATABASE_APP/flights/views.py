@@ -5,10 +5,10 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 class HomePageView(TemplateView):
-    template_name = 'flights\index.html'
+    template_name = 'flights/index.html'
     model = Flights
 
-    def get_context_data(self, **kwargs) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["flights"] = Flights.objects.all()
         return render(self.template_name, context)
