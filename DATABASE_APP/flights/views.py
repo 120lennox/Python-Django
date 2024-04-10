@@ -11,5 +11,5 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["flights"] = Flights.objects.all()
-        return context #fixed bug. 
+        return context #fixed bug. Template View if given a get context behavior returns the context
     
