@@ -55,7 +55,7 @@ ROOT_URLCONF = 'FLIGHT_MANAGEMENT_SYSTEM.urls'
 import os
 TEMPLATES = [
     {
-        'DIRS': [os.path.join(BASE_DIR, ("templates"))],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
