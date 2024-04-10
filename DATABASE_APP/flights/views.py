@@ -17,7 +17,7 @@ class FlightView(DetailView):
     model = Flights
     template_name = 'flights/flight.html'
 
-    def get_queryset(self):
+    def get_object(self, queryset=None):
         flight_id = self.kwargs.get('pk')
         return Flights.objects.filter(pk=flight_id)
     
