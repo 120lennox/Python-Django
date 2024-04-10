@@ -14,11 +14,13 @@ class HomePageView(TemplateView):
         return context #fixed bug. Template View if given a get context behavior returns the context
 
 class FlightView(DetailView):
+    model = Flights
     template_name = 'flights/flight.html'
 
-    def get_context_data(flight_id):
-        context = super().get_context_data()
-        context["flight"] = Flights.objects.get(pk=flight_id)
-        return context
+    def get_queryset(self):
+        flight_id = self.kwargs.get('pk')
+        return Flights.objects.filter(pk=flight_id)
+    
+    
         
     
