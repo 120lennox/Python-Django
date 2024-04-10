@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{flight.flight_id}}
+{% endblock title %}
+{% block content %}
+    <h3> {{flight_id}} </h3>
+    <h4>
+        <strong>Origin</strong>: <emph>{{flight.origin}}</emp> <br/>
+        <strong>Destination</strong>: <emph> {{flight.destination}} </emp><br/>
+        <strong>Duration</strong>: <emph> {{flight.duration}} </emp><br/>
+    </h4>
+{% endblock content %}
+
