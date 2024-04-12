@@ -16,11 +16,11 @@ class HomePageView(TemplateView):
 class FlightView(DetailView):
     model = Flights
     template_name = 'flights/flight.html'
+    context_object_name = "flight" 
+    
+    def get_context_data(self, **kwargs: Any):
+        context = super().get_context_data(**kwargs)
+        flight = self.get_object()
+        context['flight_id'] = flight.pk
 
-    def get_object(self, queryset=None):
-        flight_id = self.kwargs.get('pk')
-        return Flights.objects.filter(pk=flight_id)
-    
-    
-        
-    
+        return context
